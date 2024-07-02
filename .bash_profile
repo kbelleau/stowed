@@ -13,9 +13,9 @@ $HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:\
 $HOMEBREW_PREFIX/opt/gawk/libexec/gnubin:\
 $PATH"
 
-# add user bin to PATH, if it exists
-if [[ -d "$HOME/bin" ]]; then
-  PATH="$HOME/bin:$PATH"
+# add local bin to PATH, if it exists
+if [[ -d "$HOME/local/bin" ]]; then
+  PATH="$HOME/local/bin:$PATH"
 fi
 
 # export PATH now

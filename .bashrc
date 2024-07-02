@@ -61,3 +61,6 @@ alias lar='ls -laR'
 alias lat='ls -lat'
 
 alias append='tee -a'
+alias r='nano -v'
+
+alias sudocat='sudo cat'
