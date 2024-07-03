@@ -48,19 +48,17 @@ fi
 
 # if we have tree installed, create some tree aliases
 if command -v tree >/dev/null 2>&1; then
-  alias tree='tree -Ca'
+  alias tree='tree -CaI .git'
   alias cedar='echo; tree $(pwd)'
   alias sap='echo; tree -p $(pwd)'
 fi
 
-# coreutils aliases
+# aliases
 alias la='ls -alv'
 alias lax='ls -ld .??*'
 alias lr='ls -lR'
 alias lar='ls -laR'
 alias lat='ls -lat'
-
+alias sudocat='sudo cat'
 alias append='tee -a'
 alias r='nano -v'
-
-alias sudocat='sudo cat'
