@@ -14,14 +14,15 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # setting for history length and size
-HISTSIZE=500
-HISTFILESIZE=2000
+HISTSIZE=1000
+HISTFILESIZE=4000
 
 # check the window size after each command and update if necessary LINES/COLUMNS
 shopt -s checkwinsize
 
 # fancy PS1
-PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\]:\w\n\u279E \$ '
+PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\]:\w/ \n\u279E \$ '
+
 
 # fancy PS1 for interactive sub shells
 if (( "$SHLVL" > 1 )) && [[ "$TERM" != screen* ]]; then
@@ -46,13 +47,6 @@ if command -v dircolors >/dev/null 2>&1; then
   alias egrep='grep -E --color=auto'
 fi
 
-# if we have tree installed, create some tree aliases
-if command -v tree >/dev/null 2>&1; then
-  alias tree='tree -CaI .git'
-  alias cedar='echo; tree $(pwd)'
-  alias sap='echo; tree -p $(pwd)'
-fi
-
 # aliases
 alias la='ls -alv'
 alias lax='ls -ld .??*'
@@ -62,3 +56,10 @@ alias lat='ls -lat'
 alias sudocat='sudo cat'
 alias append='tee -a'
 alias r='nano -v'
+
+# if we have tree installed, create some tree aliases
+if command -v tree >/dev/null 2>&1; then
+  alias tree='tree -Ca'
+  alias cedar='echo; tree -I .git $(pwd)'
+  alias sap='echo; tree -p'
+fi
