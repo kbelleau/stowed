@@ -12,7 +12,7 @@ err() {
 
 show_help() {
   # help text
-  echo "Usage: ${0##*/} [-a|-c] [-u <username>] <hostfile> <command>"
+  echo "Usage: ${0##*/} [-a|-c] [-u <username>] <hostfile> \"<command>\""
   echo "Options:"
   echo "  -h, --help    Show this help menu"
   echo "  -a            Show output in 'view' format, with line-breaks"
@@ -72,6 +72,14 @@ format_style="0"
 username="${USER}"
 parse_options "$@"
 shift $((OPTIND - 1)) # shift $@ past optional flags
+
+# check for at least two arguments in after options are evaluated
+if [[ $# -ne 2 ]]; then
+  echo "Two arguments required: <hostlist> \"<command>\""
+  echo "---"
+  show_help
+  exit 1
+fi
 
 # check for $1, the hostfile, valid path
 if [[ ! -f "$1" ]]; then
