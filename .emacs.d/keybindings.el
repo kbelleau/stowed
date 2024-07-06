@@ -50,6 +50,7 @@
   (define-key map (kbd "C-x o") #'bell-write-file-out)
   (define-key map (kbd "C-c s") #'bell-create-scratch)
   (define-key map (kbd "C-y") #'bell-show-file-path)
+  (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
 
   ;; undo fu - trying to work with MacOS here
   (define-key map (kbd "s-u") #'undo-fu-only-undo)
@@ -110,7 +111,6 @@
   (define-key map (kbd "C-r") nil)      ; emacs
   (define-key map (kbd "M-w") nil)      ; emacs copy
   (define-key map (kbd "C-w") nil)      ; emacs cut
-  (define-key map (kbd "C-x C-s") nil)  ; emacs save-buffer
   (define-key map (kbd "C-x C-w") nil)  ; emacs write-out
   (define-key map (kbd "M-u") nil)      ; emacs uppercase-word
   (define-key map (kbd "C-x C-c") nil)  ; emacs quit emacs

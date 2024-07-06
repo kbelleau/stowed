@@ -51,3 +51,10 @@ This commmand does not push erased text to the kill ring."
   "Insert two spaces and a newline."
   (interactive)
   (insert "  \n"))
+
+;; find-file but with /ssh: prompted (for remote access)
+(defun bell-find-file-ssh ()
+  "Opens a `find-file` prompt pre-located with '/ssh:'"
+  (interactive)
+  (let ((default-directory "/ssh:"))
+    (call-interactively 'find-file)))
