@@ -2,10 +2,7 @@
 # configured on MacOS Sonoma
 
 # if not running interactively, don't run any configurations
-case $- in
-  *i*) ;;
-    *) return ;;
-esac
+[[ $- != *i* ]] && return
 
 # don't put duplicate lines in history
 HISTCONTROL=ignoreboth
@@ -22,7 +19,6 @@ shopt -s checkwinsize
 
 # fancy PS1
 PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\]:\w/ \n\u279E \$ '
-
 
 # fancy PS1 for interactive sub shells
 if (( "$SHLVL" > 1 )) && [[ "$TERM" != screen* ]]; then
