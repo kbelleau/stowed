@@ -44,6 +44,7 @@ if command -v dircolors >/dev/null 2>&1; then
 fi
 
 # aliases
+alias ll='ls -l'
 alias la='ls -alv'
 alias lax='ls -ld .??*'
 alias lr='ls -lR'

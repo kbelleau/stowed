@@ -13,9 +13,8 @@ $HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:\
 $HOMEBREW_PREFIX/opt/gawk/libexec/gnubin:\
 $PATH"
 
-# add local bin to PATH, if it exists
-[[ -x "$HOME/local/bin" ]] && \
-PATH="$HOME/local/bin:$PATH"
+# add local bin to PATH
+[[ -d "$HOME/local/bin" ]] && PATH="$HOME/local/bin:$PATH"
 
 # export PATH now
 export PATH
