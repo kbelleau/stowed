@@ -2,8 +2,8 @@
 Contains configuration files for various GNU programs. Mainly Emacs and Bash.  
 
 These configurations are intended to be used with GNU `stow` on MacOS; however this is not a requirement.  
-  
-Executable scripts are located in `local/bin/`.
+ 
+Executable scripts are located in `bin/`.
 
 ## Installing GNU stow
 Install GNU `stow` via your system package manager.  
