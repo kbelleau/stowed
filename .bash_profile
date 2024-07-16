@@ -14,7 +14,7 @@ $HOMEBREW_PREFIX/opt/gawk/libexec/gnubin:\
 $PATH"
 
 # add local bin to PATH
-[[ -d "$HOME/local/bin" ]] && PATH="$HOME/local/bin:$PATH"
+[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 # export PATH now
 export PATH
