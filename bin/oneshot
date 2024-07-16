@@ -75,7 +75,7 @@ shift $((OPTIND - 1)) # shift $@ past optional flags
 
 # check for at least two arguments in after options are evaluated
 if [[ $# -ne 2 ]]; then
-  echo "Two arguments required: <hostlist> \"<command>\""
+  err "Two arguments required: <hostlist> \"<command>\""
   echo "---"
   show_help
   exit 1
@@ -90,19 +90,32 @@ fi
 # adhere to format style chosen, and use ssh to run command(s) on remote hosts
 case "$format_style" in
   0)
+    # no formatting, just passing stdout
     while read -r hostname; do
-      ssh -nqo StrictHostKeychecking=no "${username}"@"${hostname}" "${@:2}"
+      if ! ssh -nqo StrictHostKeychecking=no \
+           "${username}"@"${hostname}" "${@:2}"; then
+        err "Connection to ${hostname} failed"
+      fi
     done < "$1"
     ;;
   1)
+    # "-a", hostname and then a line break, extra blank line at end
     while read -r hostname; do
       echo "${hostname}:"
-      ssh -nqo StrictHostKeychecking=no "${username}"@"${hostname}" "${@:2}"
+      if ! ssh -nqo StrictHostKeychecking=no \
+           "${username}"@"${hostname}" "${@:2}"; then
+        err "Connection to ${hostname} failed"
+      fi
+      echo ""
     done < "$1"
     ;;
   2)
+    # "-c", csv format: {hostname},{stdout}
     while read -r hostname; do
       echo -n "${hostname},"
-      ssh -nqo StrictHostKeychecking=no "${username}"@"${hostname}" "${@:2}"
+      if ! ssh -nqo StrictHostKeychecking=no \
+           "${username}"@"${hostname}" "${@:2}"; then
+        err "Connection to ${hostname} failed"
+      fi
     done < "$1"
 esac
