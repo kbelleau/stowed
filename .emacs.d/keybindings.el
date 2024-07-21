@@ -108,14 +108,14 @@
 
   ;; unset overlapping macos keybindings
   (define-key map (kbd "C-s") nil)      ; emacs isearch-forward
-  (define-key map (kbd "C-r") nil)      ; emacs
+  (define-key map (kbd "C-r") nil)      ; emacs isearch-backward
   (define-key map (kbd "M-w") nil)      ; emacs copy
   (define-key map (kbd "C-w") nil)      ; emacs cut
   (define-key map (kbd "C-x C-w") nil)  ; emacs write-out
   (define-key map (kbd "M-u") nil)      ; emacs uppercase-word
   (define-key map (kbd "C-x C-c") nil)  ; emacs quit emacs
 
-  ;; unset keybdings - generally not liked
+  ;; unset keybdings
   (define-key map (kbd "C-x z") nil)
   (define-key map (kbd "C-\\") nil)
   (define-key map (kbd "C-x <right>") nil)

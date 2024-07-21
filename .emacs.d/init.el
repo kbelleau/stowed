@@ -66,7 +66,7 @@
 
 ;; MANUALLY INSTALLED PACKAGES
 (add-to-list 'load-path
-             (concat user-emacs-directory "manual-install-packages/"))
+             (concat user-emacs-directory "lisp/"))
 (load "highlight-indent-guides")
 (load "flymake-yamllint")
 ;; highlight-indent-guides mode
