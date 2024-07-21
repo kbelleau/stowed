@@ -33,6 +33,9 @@ fi
 # export PS1 now
 export PS1
 
+# no .lesshst file
+export LESSHISTFILE=-
+
 # have ls and grep use colors
 if command -v dircolors >/dev/null 2>&1; then
   alias ls='ls --color=auto'
