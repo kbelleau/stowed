@@ -54,7 +54,28 @@ This commmand does not push erased text to the kill ring."
 
 ;; find-file but with /ssh: prompted (for remote access)
 (defun bell-find-file-ssh ()
-  "Opens a `find-file` prompt pre-located with '/ssh:'"
+  "Opens a `find-file' prompt pre-located with '/ssh:'."
   (interactive)
   (let ((default-directory "/ssh:"))
     (call-interactively 'find-file)))
+
+;; frame changing functions
+(defun bell-resize-frame-default ()
+  "Resize the current frame to 81x61 pixels."
+  (interactive)
+  (set-frame-size (selected-frame) 81 61))
+
+(defun bell-resize-frame-double ()
+  "Resize the current frame to 165x61 pixels."
+  (interactive)
+  (set-frame-size (selected-frame) 165 61))
+
+(defun bell-resize-frame-go ()
+  "Resize the current frame to 101x61 pixels."
+  (interactive)
+  (set-frame-size (selected-frame) 101 61))
+
+(defun bell-resize-frame-thin ()
+  "Resize the current frame to 71x61 pixels."
+  (interactive)
+  (set-frame-size (selected-frame) 71 61))
