@@ -16,6 +16,8 @@
 (define-prefix-command 'yas-prefix-map)
 ;; speedbar
 (define-prefix-command 'speedbar-prefix-map)
+;; frame resize functions
+(define-prefix-command 'bell-resize-prefix-map)
 
 ;;; MINOR MODE MAPS
 ;; corfu map
@@ -32,7 +34,7 @@
 ;; markdown map
 (add-hook 'markdown-mode-hook
           (lambda ()
-            (local-set-key (kbd "C-m") #'bell-markdown-newline)))
+            (local-set-key (kbd "C-<return>") #'bell-markdown-newline)))
 
 ;;; GLOBAL MAP
 (let ((map global-map))
@@ -59,7 +61,7 @@
   (define-key map (kbd "s-U") #'undo-fu-disable-checkpoint)
 
   ;; recentf
-  (define-key map (kbd "C-c r") #'recentf-open-files)
+  (define-key map (kbd "C-c o") #'recentf-open-files)
 
   ;; substitute
   (define-key map (kbd "C-c q") substitute-prefix-map)
@@ -80,6 +82,13 @@
   ;; speedbar
   (define-key map (kbd "C-c b") speedbar-prefix-map)
   (define-key map (kbd "C-c b b") #'speedbar-frame-mode)
+
+  ;; resize frame functions
+  (define-key map (kbd "C-c r") bell-resize-prefix-map)
+  (define-key map (kbd "C-c r r") #'bell-resize-frame-default)
+  (define-key map (kbd "C-c r d") #'bell-resize-frame-double)
+  (define-key map (kbd "C-c r g") #'bell-resize-frame-go)
+  (define-key map (kbd "C-c r t") #'bell-resize-frame-thin)
 
   ;; buffer minor mode toggles
   (define-key map (kbd "C-c w") #'whitespace-mode)
