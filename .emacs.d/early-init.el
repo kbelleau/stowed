@@ -15,7 +15,7 @@
 (push '(scroll-bar-lines . 0) default-frame-alist)
 
 ;; set default frame size
-(push '(width . 80) default-frame-alist)
+(push '(width . 81) default-frame-alist)
 (push '(height . 61) default-frame-alist)
 
 ;; give basic frame coloring while waiting for theme to load

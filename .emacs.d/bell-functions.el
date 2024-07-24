@@ -17,6 +17,17 @@ This commmand does not push erased text to the kill ring."
   (interactive "p")
   (delete-region (point) (progn (backward-word arg) (point))))
 
+;; delete line backwards
+(defun bell-backward-delete-line ()
+  "Delete from cursor to the beginning of a line."
+  (interactive)
+  (let ((start-of-line (line-beginning-position))
+        (current-point (point)))
+    (save-excursion
+      (goto-char start-of-line)
+      (skip-chars-forward " \t")
+      (delete-region (point) current-point))))
+
 ;; write-file -> bell-write-file
 (defun bell-write-file-out ()
   "Save the current buffer by writing-out like GNU nano."

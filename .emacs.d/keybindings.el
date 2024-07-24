@@ -53,8 +53,9 @@
   (define-key map (kbd "C-c s") #'bell-create-scratch)
   (define-key map (kbd "C-y") #'bell-show-file-path)
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
+  (define-key map (kbd "s-<backspace>") #'bell-backward-delete-line)
 
-  ;; undo fu - trying to work with MacOS here
+  ;; undo fu
   (define-key map (kbd "s-u") #'undo-fu-only-undo)
   (define-key map (kbd "s-z") #'undo-fu-only-redo)
   (define-key map (kbd "s-Z") #'undo-fu-only-redo-all)
