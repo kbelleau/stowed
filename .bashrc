@@ -33,6 +33,9 @@ fi
 # export PS1 now
 export PS1
 
+# assign PAGER
+export PAGER="less"
+
 # no .lesshst file
 export LESSHISTFILE=-
 
@@ -54,10 +57,9 @@ alias lr='ls -lR'
 alias lar='ls -laR'
 alias lt='ls -ltr'
 alias lat='ls -latr'
-alias b='brew'
 alias sudocat='sudo cat'
 alias append='tee -a'
-alias r='nano -v'
+alias view='nano -v'
 
 # if we have tree installed, create some tree aliases
 if command -v tree >/dev/null 2>&1; then

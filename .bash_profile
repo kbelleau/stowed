@@ -19,9 +19,6 @@ $PATH"
 # export PATH now
 export PATH
 
-# assign PAGER
-export PAGER="less"
-
 # assign EDITOR
 [[ -x "$HOMEBREW_PREFIX/bin/nano" ]] && \
 export EDITOR="$HOMEBREW_PREFIX/bin/nano"
