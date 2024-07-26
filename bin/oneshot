@@ -3,7 +3,7 @@
 # oneshot : run a command (or more) against remote hosts
 # requires: bash 3.2+, ssh
 
-trap 'echo "SIGINT Received... exiting" && exit 130' SIGINT
+trap 'echo -e "\nSIGINT Received... exiting"; exit 130' SIGINT
 
 err() {
   # handle errors (send to standard error)
