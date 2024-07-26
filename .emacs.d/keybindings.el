@@ -53,7 +53,7 @@
   (define-key map (kbd "C-c s") #'bell-create-scratch)
   (define-key map (kbd "C-y") #'bell-show-file-path)
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
-  (define-key map (kbd "s-<backspace>") #'bell-backward-kill-line)
+  (define-key map (kbd "s-<backspace>") #'bell-backward-delete-line)
 
   ;; undo fu
   (define-key map (kbd "s-u") #'undo-fu-only-undo)
