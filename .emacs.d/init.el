@@ -69,12 +69,19 @@
              (concat user-emacs-directory "lisp/"))
 (load "highlight-indent-guides")
 (load "flymake-yamllint")
+(load "notif")
+
 ;; highlight-indent-guides mode
 (require 'highlight-indent-guides)
 (setq highlight-indent-guides-method 'character
       highlight-indent-guides-auto-enabled nil)
 (set-face-attribute 'highlight-indent-guides-character-face nil
                     :foreground "gray25")
+
+;; notif config
+(require 'notif)
+(setq notif-todo-enable t
+      notif-notepad-enable t)
 
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
@@ -99,7 +106,8 @@
 (recentf-mode 1)
 ;; recentf exclusions
 (add-to-list 'recentf-exclude
-             (concat user-emacs-directory "[*]*"))
+             (concat notif-directory notif-todo-note-name)
+             (concat notif-directory notif-notepad-note-name))
 
 ;; electric pair mode
 (electric-pair-mode 1)
@@ -177,7 +185,6 @@
 (add-hook 'after-init-hook
           (lambda ()
             (progn
-              (find-file (concat user-emacs-directory "*Scratchpad*"))
               (kill-buffer "*scratch*")
               (with-current-buffer "*Messages*"
                 (text-scale-decrease 1)))))
