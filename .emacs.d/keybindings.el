@@ -18,6 +18,8 @@
 (define-prefix-command 'speedbar-prefix-map)
 ;; frame resize functions
 (define-prefix-command 'bell-resize-prefix-map)
+;; notif
+(define-prefix-command 'notif-prefix-map)
 
 ;;; MINOR MODE MAPS
 ;; corfu map
@@ -54,6 +56,12 @@
   (define-key map (kbd "C-y") #'bell-show-file-path)
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
   (define-key map (kbd "s-<backspace>") #'bell-backward-delete-line)
+
+  ;; notif functions
+  (define-key map (kbd "C-c n") notif-prefix-map)
+  (define-key map (kbd "C-c n n") #'notif-find-note)
+  (define-key map (kbd "C-c n t") #'notif-find-todo)
+  (define-key map (kbd "C-c n s") #'notif-find-notepad)
 
   ;; undo fu
   (define-key map (kbd "s-u") #'undo-fu-only-undo)
