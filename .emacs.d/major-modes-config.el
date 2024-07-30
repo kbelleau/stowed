@@ -97,3 +97,10 @@
   (visual-line-mode 1)
   (flyspell-mode 1))
 (add-hook 'markdown-mode-hook #'md-config)
+
+;; snippet
+(defun snippet-config ()
+  (visual-line-mode -1)
+  (setq truncate-lines t
+        show-trailing-whitespace t))
+(add-hook 'snippet-mode-hook #'snippet-config)

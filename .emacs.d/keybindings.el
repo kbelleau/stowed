@@ -60,6 +60,7 @@
   ;; notif functions
   (define-key map (kbd "C-c n") notif-prefix-map)
   (define-key map (kbd "C-c n n") #'notif-find-note)
+  (define-key map (kbd "C-c n r") #'notif-read-note)
   (define-key map (kbd "C-c n t") #'notif-find-todo)
   (define-key map (kbd "C-c n s") #'notif-find-notepad)
 

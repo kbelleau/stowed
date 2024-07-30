@@ -105,9 +105,8 @@
       recentf-max-size 10)
 (recentf-mode 1)
 ;; recentf exclusions
-(add-to-list 'recentf-exclude
-             (concat notif-directory notif-todo-note-name)
-             (concat notif-directory notif-notepad-note-name))
+(add-to-list 'recentf-exclude "TODO")
+(add-to-list 'recentf-exclude "Notepad")
 
 ;; electric pair mode
 (electric-pair-mode 1)
