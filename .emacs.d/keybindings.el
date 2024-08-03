@@ -3,35 +3,27 @@
 
 ;;; OS SPECIFIC
 ;; mac option as 'meta'
-;; mac command will be 'super' and get all normal macos shortcuts
+;; mac command will be 'super' and have most normal macos shortcuts
 ;; 'alt' is unchanged
 (setq-default mac-option-modifier 'meta)
 
 ;;; DEFINE PREFIXES
+;; notif
+(define-prefix-command 'notif-prefix-map)
 ;; substitute
 (define-prefix-command 'substitute-prefix-map)
 ;; flymake
 (define-prefix-command 'flymake-prefix-map)
-;; yas
-(define-prefix-command 'yas-prefix-map)
-;; speedbar
-(define-prefix-command 'speedbar-prefix-map)
 ;; frame resize functions
 (define-prefix-command 'bell-resize-prefix-map)
-;; notif
-(define-prefix-command 'notif-prefix-map)
-
-;;; MINOR MODE MAPS
-;; corfu map
-(let ((map corfu-map))
-  (define-key map (kbd "TAB") 'corfu-next)
-  (define-key map (kbd "S-TAB") 'corfu-previous))
+;; mode toggles
+(define-prefix-command 'toggle-prefix-map)
 
 ;;; MAJOR MODE MAPS
 ;; go map
 (add-hook 'go-mode-hook
           (lambda ()
-            (local-set-key (kbd "C-c f") #'gofmt)))
+            (local-set-key (kbd "C-r") #'gofmt)))
 
 ;; markdown map
 (add-hook 'markdown-mode-hook
@@ -44,25 +36,15 @@
   ;; macos thing
   (define-key map (kbd "<escape>") 'keyboard-escape-quit)
 
-  ;; modus theme toggle
-  (define-key map (kbd "C-c t") #'modus-themes-toggle)
-
   ;; bell functions
   (define-key map (kbd "C-<delete>") #'bell-delete-word)
   (define-key map (kbd "M-d") #'bell-delete-word)
   (define-key map (kbd "C-<backspace>") #'bell-backward-delete-word)
   (define-key map (kbd "C-x o") #'bell-write-file-out)
   (define-key map (kbd "C-c s") #'bell-create-scratch)
-  (define-key map (kbd "C-y") #'bell-show-file-path)
+  (define-key map (kbd "C-w") #'bell-show-file-path)
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
   (define-key map (kbd "s-<backspace>") #'bell-backward-delete-line)
-
-  ;; notif functions
-  (define-key map (kbd "C-c n") notif-prefix-map)
-  (define-key map (kbd "C-c n n") #'notif-find-note)
-  (define-key map (kbd "C-c n r") #'notif-read-note)
-  (define-key map (kbd "C-c n t") #'notif-find-todo)
-  (define-key map (kbd "C-c n s") #'notif-find-notepad)
 
   ;; undo fu
   (define-key map (kbd "s-u") #'undo-fu-only-undo)
@@ -70,17 +52,38 @@
   (define-key map (kbd "s-Z") #'undo-fu-only-redo-all)
   (define-key map (kbd "s-U") #'undo-fu-disable-checkpoint)
 
-  ;; recentf
-  (define-key map (kbd "C-c o") #'recentf-open-files)
+  ;; frame, window, buffer navigation
+  (define-key map (kbd "s-p") #'other-window)
+  (define-key map (kbd "s-]") #'next-buffer)
+  (define-key map (kbd "s-[") #'previous-buffer)
+  (define-key map (kbd "M-n") #'forward-paragraph)
+  (define-key map (kbd "M-p") #'backward-paragraph)
+  (define-key map (kbd "C-v") #'scroll-down-command)
+  (define-key map (kbd "M-v") #'scroll-up-command)
 
-  ;; substitute
+  ;; common in-buffer shortcuts
+  (define-key map (kbd "C-c d") #'delete-trailing-whitespace)
+  (define-key map (kbd "M-_") #'goto-line)
+  (define-key map (kbd "M-l") #'count-lines-page)
+  (define-key map (kbd "C-x u") #'upcase-word)
+  (define-key map (kbd "C-x l") #'downcase-word)
+
+  ;; notif functions (prefixed)
+  (define-key map (kbd "C-c n") notif-prefix-map)
+  (define-key map (kbd "C-c n f") #'notif-find-note)
+  (define-key map (kbd "C-c n r") #'notif-read-note)
+  (define-key map (kbd "C-c n t") #'notif-find-todo)
+  (define-key map (kbd "C-c n n") #'notif-find-notepad)
+  ;; (define-key map (kbd "C-c n s") #'notif-search-notes)
+
+  ;; substitute functions (prefixed)
   (define-key map (kbd "C-c q") substitute-prefix-map)
   (define-key map (kbd "C-c q q") #'substitute-target-in-buffer)
   (define-key map (kbd "C-c q f") #'substitute-target-in-defun)
   (define-key map (kbd "C-c q e") #'substitute-target-below-point)
   (define-key map (kbd "C-c q a") #'substitute-target-above-point)
 
-  ;; flymake
+  ;; flymake functions (prefixed)
   (define-key map (kbd "C-c k") flymake-prefix-map)
   (define-key map (kbd "C-c k k") #'flymake-mode)
   (define-key map (kbd "C-c k n") #'flymake-goto-next-error)
@@ -89,47 +92,35 @@
   (define-key map (kbd "C-c k b") #'flymake-running-backends)
   (define-key map (kbd "C-c k m") #'flymake-menu)
 
-  ;; speedbar
-  (define-key map (kbd "C-c b") speedbar-prefix-map)
-  (define-key map (kbd "C-c b b") #'speedbar-frame-mode)
-
-  ;; resize frame functions
+  ;; resize frame functions (prefixed)
   (define-key map (kbd "C-c r") bell-resize-prefix-map)
   (define-key map (kbd "C-c r r") #'bell-resize-frame-default)
   (define-key map (kbd "C-c r d") #'bell-resize-frame-double)
   (define-key map (kbd "C-c r g") #'bell-resize-frame-go)
   (define-key map (kbd "C-c r t") #'bell-resize-frame-thin)
 
-  ;; buffer minor mode toggles
-  (define-key map (kbd "C-c w") #'whitespace-mode)
-  (define-key map (kbd "C-c e") #'display-fill-column-indicator-mode)
-  (define-key map (kbd "C-c l") #'display-line-numbers-mode)
-  (define-key map (kbd "C-c i") #'highlight-indent-guides-mode)
+  ;; buffer toggles for minor modes + (prefixed)
+  (define-key map (kbd "C-c t") toggle-prefix-map)
+  (define-key map (kbd "C-c t w") #'whitespace-mode)
+  (define-key map (kbd "C-c t e") #'display-fill-column-indicator-mode)
+  (define-key map (kbd "C-c t l") #'display-line-numbers-mode)
+  (define-key map (kbd "C-c t i") #'highlight-indent-guides-mode)
+  (define-key map (kbd "C-c t t") #'modus-themes-toggle)
+  (define-key map (kbd "C-c t s") #'speedbar-frame-mode)
 
-  ;; common in-buffer shortcuts
-  (define-key map (kbd "C-c d") #'delete-trailing-whitespace)
-  (define-key map (kbd "s-_") #'goto-line)
-  (define-key map (kbd "M-l") #'count-lines-page)
-  (define-key map (kbd "C-x u") #'upcase-word)
-  (define-key map (kbd "C-x l") #'downcase-word)
+  ;; org-mode globals
+  (define-key map (kbd "C-c l") #'org-store-link)
 
-  ;; frame, window, buffer navigation
-  (define-key map (kbd "M-o") #'other-window)
-  (define-key map (kbd "s-]") #'next-buffer)
-  (define-key map (kbd "s-[") #'previous-buffer)
-  (define-key map (kbd "M-n") #'forward-paragraph)
-  (define-key map (kbd "M-p") #'backward-paragraph)
-  (define-key map (kbd "C-v") #'scroll-down-command)
-  (define-key map (kbd "M-v") #'scroll-up-command)
+  ;; recentf
+  (define-key map (kbd "C-c o") #'recentf-open-files)
 
   ;; packages
   (define-key map (kbd "C-c p") #'list-packages)
 
-  ;; unset overlapping macos keybindings
+  ;; unset overlapping macos keybindings (make these available for use)
   (define-key map (kbd "C-s") nil)      ; emacs isearch-forward
-  (define-key map (kbd "C-r") nil)      ; emacs isearch-backward
   (define-key map (kbd "M-w") nil)      ; emacs copy
-  (define-key map (kbd "C-w") nil)      ; emacs cut
+  (define-key map (kbd "C-y") nil)      ; emacs paste
   (define-key map (kbd "C-x C-w") nil)  ; emacs write-out
   (define-key map (kbd "M-u") nil)      ; emacs uppercase-word
   (define-key map (kbd "C-x C-c") nil)  ; emacs quit emacs

@@ -52,7 +52,7 @@ fi
 # aliases
 alias ll='ls -l'
 alias la='ls -alv'
-alias lax='ls -ld .??*'
+alias lax='ls -ld .??* 2>/dev/null'
 alias lr='ls -lR'
 alias lar='ls -laR'
 alias lt='ls -ltr'
