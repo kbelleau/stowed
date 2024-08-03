@@ -35,7 +35,8 @@
       tab-always-indent 'complete
       frame-title-format '("GNU Emacs " emacs-version)
       ;; make scratch buffer blank
-      initial-scratch-message nil)
+      initial-scratch-message nil
+      read-extended-command-predicate #'command-completion-default-include-p)
 
 ;;; FILE MANAGEMENT
 ;; backups
@@ -67,9 +68,6 @@
 ;; MANUALLY INSTALLED PACKAGES
 (add-to-list 'load-path
              (concat user-emacs-directory "lisp/"))
-(load "highlight-indent-guides")
-(load "flymake-yamllint")
-(load "notif")
 
 ;; highlight-indent-guides mode
 (require 'highlight-indent-guides)
@@ -82,6 +80,9 @@
 (require 'notif)
 (setq notif-todo-enable t
       notif-notepad-enable t)
+
+;; include flymake-yamllint
+(require 'flymake-yamllint)
 
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
@@ -142,7 +143,8 @@
 ;; corfu
 (require 'corfu)
 (setq corfu-auto t
-      corfu-quit-no-match 'separator)
+      corfu-quit-no-match 'separator
+      tab-always-indent 'complete)
 
 ;; lin
 (setq lin-mode-hooks

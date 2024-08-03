@@ -50,7 +50,7 @@
   (display-fill-column-indicator-mode 1)
   (corfu-mode 1)
   (eglot-ensure)
-  (highlight-indent-guides-mode))
+  (highlight-indent-guides-mode 1))
 (add-hook 'go-mode-hook #'go-config)
 
 ;; python
