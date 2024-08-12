@@ -76,10 +76,8 @@
 (set-face-attribute 'highlight-indent-guides-character-face nil
                     :foreground "gray25")
 
-;; notif config
+;; include notif
 (require 'notif)
-(setq notif-todo-enable t
-      notif-notepad-enable t)
 
 ;; include flymake-yamllint
 (require 'flymake-yamllint)

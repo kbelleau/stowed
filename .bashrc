@@ -40,7 +40,7 @@ export PAGER="less"
 export LESSHISTFILE=-
 
 # have ls and grep use colors
-if command -v dircolors >/dev/null 2>&1; then
+if command -v dircolors &>/dev/null; then
   alias ls='ls --color=auto'
   alias dir='dir --color=auto'
   alias vidr='vdir --color=auto'
@@ -62,7 +62,7 @@ alias append='tee -a'
 alias view='nano -v'
 
 # if we have tree installed, create some tree aliases
-if command -v tree >/dev/null 2>&1; then
+if command -v tree &>/dev/null; then
   alias tree='tree -Ca'
   alias cedar='echo; tree -I .git $(pwd)'
   alias sap='echo; tree -p'
