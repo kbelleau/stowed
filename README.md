@@ -1,15 +1,17 @@
 # My Stowed Files
-Contains configuration files for various GNU programs. Mainly Emacs and Bash.  
+Contains configuration files for various GNU programs.  
+- Emacs  
+- Bash  
+- Screen  
+- Nano  
 
-These configurations are intended to be used with GNU `stow` on MacOS; however this is not a requirement.  
-  
-Executable scripts are located in `local/bin/`.
+These configurations are intended to be used with GNU `stow` on MacOS; however this is not a requirement.
 
 ## Installing GNU stow
 Install GNU `stow` via your system package manager.  
 
 Homebrew:  
-`brew update && brew install stow`
+`brew install stow`
 
 ## To Use
 Get to your home directory:  
