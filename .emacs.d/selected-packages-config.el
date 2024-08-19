@@ -10,7 +10,9 @@
         lin
         substitute
         yasnippet
+        tramp
         paredit
+        eglot
         undo-fu
         go-mode
         yaml-mode
