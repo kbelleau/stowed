@@ -22,8 +22,11 @@
 ;;; MAJOR MODE MAPS
 ;; go map
 (add-hook 'go-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-r") #'gofmt)))
+          (lambda () (local-set-key (kbd "C-r") #'gofmt)))
+
+;; python map
+(add-hook 'python-mode-hook
+          (lambda () (local-set-key (kbd "C-c v") #'pyvenv-activate)))
 
 ;; markdown map
 (add-hook 'markdown-mode-hook

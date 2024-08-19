@@ -48,8 +48,8 @@
         fill-column 100
         indent-tabs-mode t)
   (display-fill-column-indicator-mode 1)
-  (corfu-mode 1)
   (eglot-ensure)
+  (corfu-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'go-mode-hook #'go-config)
 
@@ -63,8 +63,8 @@
         indent-tabs-mode nil
         tab-width 4)
   (display-fill-column-indicator-mode 1)
-  (corfu-mode 1)
   (eglot-ensure)
+  (corfu-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'python-mode-hook #'python-config)
 

@@ -76,11 +76,14 @@
 (set-face-attribute 'highlight-indent-guides-character-face nil
                     :foreground "gray25")
 
-;; include notif
+;; load notif
 (require 'notif)
 
-;; include flymake-yamllint
+;; load flymake-yamllint
 (require 'flymake-yamllint)
+
+;; load pyvenv
+(require 'pyvenv)
 
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
