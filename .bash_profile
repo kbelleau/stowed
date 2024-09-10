@@ -19,13 +19,5 @@ $PATH"
 # export PATH now
 export PATH
 
-# assign EDITOR
-[[ -x "$HOMEBREW_PREFIX/bin/nano" ]] && \
-export EDITOR="$HOMEBREW_PREFIX/bin/nano"
-
-# enable bash completion
-[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && \
-source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-
 # source .bashrc
 [[ -r "$HOME/.bashrc" ]] && source "$HOME/.bashrc"

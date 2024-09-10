@@ -33,11 +33,20 @@ fi
 # export PS1 now
 export PS1
 
-# assign PAGER
-export PAGER="less"
+# enable bash completion
+[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && \
+source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 
-# no .lesshst file
-export LESSHISTFILE=-
+# assign EDITOR
+[[ -x "$HOMEBREW_PREFIX/bin/nano" ]] && \
+export EDITOR="$HOMEBREW_PREFIX/bin/nano"
+
+# assign PAGER
+if command -v less &>/dev/null; then
+  export PAGER="less"
+  # no .lesshst file
+  export LESSHISTFILE=-
+fi
 
 # have ls and grep use colors
 if command -v dircolors &>/dev/null; then
@@ -60,6 +69,7 @@ alias lat='ls -latr'
 alias sudocat='sudo cat'
 alias append='tee -a'
 alias view='nano -v'
+alias tp='type -p'
 
 # if we have tree installed, create some tree aliases
 if command -v tree &>/dev/null; then
