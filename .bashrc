@@ -1,5 +1,5 @@
 # kbelleau - .bashrc - MacOS w/ homebrew
-# configured on MacOS Sonoma
+# configured on MacOS Sequoia
 
 # if not running interactively, don't run any configurations
 [[ $- != *i* ]] && return
@@ -60,12 +60,14 @@ fi
 
 # aliases
 alias ll='ls -l'
-alias la='ls -alv'
-alias lax='ls -ld .??* 2>/dev/null'
-alias lr='ls -lR'
-alias lar='ls -laR'
+alias la='ls -al'
+alias lR='ls -lR'
+alias laR='ls -laR'
 alias lt='ls -ltr'
 alias lat='ls -latr'
+alias lv='ls -lv'
+alias lav='ls -lav'
+alias lax='ls -ld .??* 2>/dev/null'
 alias sudocat='sudo cat'
 alias append='tee -a'
 alias view='nano -v'

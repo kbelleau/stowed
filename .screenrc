@@ -1,7 +1,0 @@
-# kbelleau - .screenrc - MacOS w/ homebrew
-
-hardstatus on
-# statusbar at bottom
-hardstatus alwayslastline
-# custom bar
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
