@@ -14,8 +14,7 @@
         paredit
         eglot
         undo-fu
-        go-mode
+        inf-ruby
         yaml-mode
         json-mode
-        sed-mode
         markdown-mode))

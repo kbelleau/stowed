@@ -35,38 +35,24 @@
         sh-basic-offset 2
         tab-width 2)
   (display-fill-column-indicator-mode 1)
-  (corfu-mode 1)
   (flymake-mode 1)
+  (corfu-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'sh-mode-hook #'sh-config)
 
-;; go
-(defun go-config ()
-  (visual-line-mode -1)
-  (setq truncate-lines t
-        show-trailing-whitespace t
-        fill-column 100
-        indent-tabs-mode t)
-  (display-fill-column-indicator-mode 1)
-  (eglot-ensure)
-  (corfu-mode 1)
-  (highlight-indent-guides-mode 1))
-(add-hook 'go-mode-hook #'go-config)
-
-;; python
-(defun python-config ()
+;; ruby
+(defun ruby-config ()
   (visual-line-mode -1)
   (setq truncate-lines t
         show-trailing-whitespace t
         fill-column 80
-        python-indent-guess-indent-offset-verbose nil
-        indent-tabs-mode nil
-        tab-width 4)
+        ruby-indent-tabs-mode nil
+        ruby-indent-level 2)
   (display-fill-column-indicator-mode 1)
-  (eglot-ensure)
+  (flymake-mode 1)
   (corfu-mode 1)
   (highlight-indent-guides-mode 1))
-(add-hook 'python-mode-hook #'python-config)
+(add-hook 'ruby-mode-hook #'ruby-config)
 
 ;; yaml
 (defun yaml-config ()
@@ -80,7 +66,6 @@
   (flymake-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'yaml-mode-hook #'yaml-config)
-(add-hook 'yaml-mode-hook #'flymake-yamllint-setup)
 
 ;; json
 (defun json-config ()

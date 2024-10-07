@@ -79,12 +79,6 @@
 ;; load notif
 (require 'notif)
 
-;; load flymake-yamllint
-(require 'flymake-yamllint)
-
-;; load pyvenv
-(require 'pyvenv)
-
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
 (require 'vertico)
@@ -152,8 +146,7 @@
       '(org-mode-hook
         emacs-lisp-mode-hook
         sh-mode-hook
-        go-mode-hook
-        python-mode-hook
+        ruby-mode-hook
         yaml-mode-hook
         json-mode-hook
         markdown-mode-hook
@@ -166,9 +159,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (shell . t)
-   (python . t)))
-(setq org-babel-python-command "python3")
+   (shell . t)))
 
 ;;; MAJOR MODE CONFIGURATIONS
 (load-file (concat user-emacs-directory "major-modes-config.el"))

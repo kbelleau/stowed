@@ -20,13 +20,10 @@
 (define-prefix-command 'toggle-prefix-map)
 
 ;;; MAJOR MODE MAPS
-;; go map
-(add-hook 'go-mode-hook
-          (lambda () (local-set-key (kbd "C-r") #'gofmt)))
-
-;; python map
-(add-hook 'python-mode-hook
-          (lambda () (local-set-key (kbd "C-c v") #'pyvenv-activate)))
+;; ruby map
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c r") #'inf-ruby-console-auto)))
 
 ;; markdown map
 (add-hook 'markdown-mode-hook
@@ -73,12 +70,12 @@
 
   ;; notif functions (prefixed)
   (define-key map (kbd "C-c n") notif-prefix-map)
-  (define-key map (kbd "C-c n f") #'notif-find-note)
+  (define-key map (kbd "C-c n n") #'notif-find-note)
   (define-key map (kbd "C-c n r") #'notif-read-note)
   (define-key map (kbd "C-c n i") #'notif-find-ticket)
   (define-key map (kbd "C-c n t") #'notif-find-todo)
-  (define-key map (kbd "C-c n n") #'notif-find-notepad)
-  ;; (define-key map (kbd "C-c n s") #'notif-search-notes)
+  (define-key map (kbd "C-c n s") #'notif-find-notepad)
+  ;; (define-key map (kbd "C-c n f") #'notif-search-notes)
 
   ;; substitute functions (prefixed)
   (define-key map (kbd "C-c q") substitute-prefix-map)
@@ -97,11 +94,11 @@
   (define-key map (kbd "C-c k m") #'flymake-menu)
 
   ;; resize frame functions (prefixed)
-  (define-key map (kbd "C-c r") bell-resize-prefix-map)
-  (define-key map (kbd "C-c r r") #'bell-resize-frame-default)
-  (define-key map (kbd "C-c r d") #'bell-resize-frame-double)
-  (define-key map (kbd "C-c r g") #'bell-resize-frame-go)
-  (define-key map (kbd "C-c r t") #'bell-resize-frame-thin)
+  (define-key map (kbd "C-c f") bell-resize-prefix-map)
+  (define-key map (kbd "C-c f f") #'bell-resize-frame-default)
+  (define-key map (kbd "C-c f d") #'bell-resize-frame-double)
+  (define-key map (kbd "C-c f w") #'bell-resize-frame-wide)
+  (define-key map (kbd "C-c f t") #'bell-resize-frame-thin)
 
   ;; buffer toggles for minor modes + (prefixed)
   (define-key map (kbd "C-c t") toggle-prefix-map)

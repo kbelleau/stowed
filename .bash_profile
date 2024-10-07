@@ -27,5 +27,7 @@ $MANPATH"
 
 export MANPATH
 
+eval "$(rbenv init - --no-rehash bash)"
+
 # source .bashrc
 [[ -r "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
