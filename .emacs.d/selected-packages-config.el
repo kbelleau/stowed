@@ -4,15 +4,14 @@
 (setq package-selected-packages
       '(modus-themes
         org-superstar
+        company
         vertico
         orderless
-        corfu
         lin
         substitute
         yasnippet
         tramp
         paredit
-        eglot
         undo-fu
         inf-ruby
         yaml-mode

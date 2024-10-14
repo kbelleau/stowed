@@ -79,6 +79,9 @@
 ;; load notif
 (require 'notif)
 
+;; TO CHANGE: load chruby.el
+(require 'chruby)
+
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
 (require 'vertico)
@@ -125,6 +128,7 @@
 (yas-global-mode 1)
 
 ;; flymake mode
+(require 'flymake)
 (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
 
 ;;; MINOR MODE CONFIGURATIONS - MODE SPECIFIC
@@ -135,11 +139,11 @@
 (require 'eglot)
 (setq eglot-autoshutdown t)
 
-;; corfu
-(require 'corfu)
-(setq corfu-auto t
-      corfu-quit-no-match 'separator
-      tab-always-indent 'complete)
+;; company-mode
+(require 'company)
+(setq company-minimum-prefix-length 1
+      company-idle-delay
+      (lambda () (if (company-in-string-or-comment) nil 0.4)))
 
 ;; lin
 (setq lin-mode-hooks
@@ -159,7 +163,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (shell . t)))
+   (shell . t)
+   (ruby . t)))
 
 ;;; MAJOR MODE CONFIGURATIONS
 (load-file (concat user-emacs-directory "major-modes-config.el"))

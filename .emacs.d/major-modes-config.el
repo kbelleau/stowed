@@ -21,7 +21,7 @@
         indent-tabs-mode nil
         tab-width 2)
   (display-fill-column-indicator-mode 1)
-  (corfu-mode 1)
+  (company-mode 1)
   (paredit-mode 1))
 (add-hook 'emacs-lisp-mode-hook #'elisp-config)
 
@@ -32,25 +32,28 @@
         show-trailing-whitespace t
         fill-column 80
         indent-tabs-mode nil
-        sh-basic-offset 2
-        tab-width 2)
+        tab-width 2
+        sh-basic-offset 2)
   (display-fill-column-indicator-mode 1)
   (flymake-mode 1)
-  (corfu-mode 1)
+  (company-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'sh-mode-hook #'sh-config)
 
 ;; ruby
 (defun ruby-config ()
   (visual-line-mode -1)
+  (inf-ruby-minor-mode 1)
   (setq truncate-lines t
         show-trailing-whitespace t
         fill-column 80
+        indent-tabs-mode nil
+        tab-width 2
         ruby-indent-tabs-mode nil
         ruby-indent-level 2)
   (display-fill-column-indicator-mode 1)
   (flymake-mode 1)
-  (corfu-mode 1)
+  (company-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'ruby-mode-hook #'ruby-config)
 
