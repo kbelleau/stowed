@@ -27,7 +27,13 @@ $MANPATH"
 
 export MANPATH
 
-eval "$(rbenv init - --no-rehash bash)"
+# chruby support
+[[ -r "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh" ]] && \
+  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
+
+# enable chruby auto-switching by .ruby-version files
+[[ -r "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh" ]] && \
+source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh"
 
 # source .bashrc
 [[ -r "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
