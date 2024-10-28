@@ -46,11 +46,11 @@
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
   (define-key map (kbd "s-<backspace>") #'bell-backward-delete-line)
 
-  ;; undo fu
-  (define-key map (kbd "s-u") #'undo-fu-only-undo)
-  (define-key map (kbd "s-z") #'undo-fu-only-redo)
-  (define-key map (kbd "s-Z") #'undo-fu-only-redo-all)
-  (define-key map (kbd "s-U") #'undo-fu-disable-checkpoint)
+  ;; undo-fu
+  (define-key map (kbd "M-u") #'undo-fu-only-undo)
+  (define-key map (kbd "M-z") #'undo-fu-only-redo)
+  (define-key map (kbd "M-Z") #'undo-fu-only-redo-all)
+  (define-key map (kbd "M-U") #'undo-fu-disable-checkpoint)
 
   ;; frame, window, buffer navigation
   (define-key map (kbd "s-p") #'other-window)
@@ -74,7 +74,7 @@
   (define-key map (kbd "C-c n r") #'notif-read-note)
   (define-key map (kbd "C-c n i") #'notif-find-ticket)
   (define-key map (kbd "C-c n t") #'notif-find-todo)
-  (define-key map (kbd "C-c n s") #'notif-find-notepad)
+  (define-key map (kbd "C-c n p") #'notif-find-notepad)
   ;; (define-key map (kbd "C-c n f") #'notif-search-notes)
 
   ;; substitute functions (prefixed)
@@ -123,7 +123,6 @@
   (define-key map (kbd "M-w") nil)      ; emacs copy
   (define-key map (kbd "C-y") nil)      ; emacs paste
   (define-key map (kbd "C-x C-w") nil)  ; emacs write-out
-  (define-key map (kbd "M-u") nil)      ; emacs uppercase-word
   (define-key map (kbd "C-x C-c") nil)  ; emacs quit emacs
 
   ;; unset keybdings
