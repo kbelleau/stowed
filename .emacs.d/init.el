@@ -171,10 +171,10 @@
 ;; hooks are found in the major-modes-config.el file
 
 ;;; BELL FUNCTIONS
-(load-file (expand-file-name "$HOME/.emacs.d/bell-functions.el"))
+(load-file (concat user-emacs-directory "bell-functions.el"))
 
 ;;; KEYBINDINGS
-(load-file (expand-file-name "$HOME/.emacs.d/keybindings.el"))
+(load-file (concat user-emacs-directory "keybindings.el"))
 
 ;;; DEFAULT BROWSER
 (setq browse-url-browser-function #'browse-url-default-macosx-browser)
