@@ -67,7 +67,6 @@ alias lt='ls -ltr'
 alias lat='ls -latr'
 alias lv='ls -lv'
 alias lav='ls -lav'
-alias lax='ls -ld .??* 2>/dev/null'
 alias sudocat='sudo cat'
 alias append='tee -a'
 alias view='nano -v'
@@ -79,3 +78,19 @@ if command -v tree &>/dev/null; then
   alias cedar='echo; tree -I .git $(pwd)'
   alias sap='echo; tree -p'
 fi
+
+# functions
+lax() {
+  [[ $# -eq 0 ]] && ls -ld .??* 2>/dev/null
+  [[ $# -eq 1 ]] && ls -ld "${1}"/.??* 2>/dev/null
+  if [[ $# -gt 1 ]]; then
+    local d
+    local c=0
+    for d in "$@"; do
+      echo "${d}:"
+      ls -ld "${d}"/.??* 2>/dev/null
+      ((c++))
+      [[ "$c" -eq $# ]] || echo ""
+    done
+  fi
+}
