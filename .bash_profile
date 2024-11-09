@@ -12,7 +12,7 @@ $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:\
 $HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:\
 $PATH"
 
-# add local bin to PATH
+# add home bin to PATH
 [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 export PATH

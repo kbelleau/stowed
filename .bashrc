@@ -4,7 +4,7 @@
 # if not running interactively, don't run any configurations
 [[ $- != *i* ]] && return
 
-# don't put duplicate lines in history
+# don't put duplicate lines in history; ignore leading whitespace
 HISTCONTROL=ignoreboth
 
 # append to history file instead of overwrite
@@ -18,22 +18,9 @@ HISTFILESIZE=4000
 shopt -s checkwinsize
 
 # fancy PS1
-PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\]:\w/ \n\u279E \$ '
+export PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\] \w/ \n \$ '
 
-# fancy PS1 for interactive sub shells
-if (( "$SHLVL" > 1 )) && [[ "$TERM" != screen* ]]; then
-  PS1="(shlvl=$SHLVL) $PS1"
-fi
-
-# fancy PS1 for screen session
-if [[ "$TERM" == screen* ]]; then
-  PS1="[$STY] $PS1"
-fi
-
-# export PS1 now
-export PS1
-
-# enable bash completion
+# enable bash completion via homebrew
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && \
 source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 
@@ -54,8 +41,6 @@ if command -v dircolors &>/dev/null; then
   alias dir='dir --color=auto'
   alias vidr='vdir --color=auto'
   alias grep='grep --color=auto'
-  alias fgrep='grep -F --color=auto'
-  alias egrep='grep -E --color=auto'
 fi
 
 # aliases
@@ -70,7 +55,7 @@ alias lav='ls -lav'
 alias sudocat='sudo cat'
 alias append='tee -a'
 alias view='nano -v'
-alias tp='type -p'
+alias tp='type -P'
 
 # if we have tree installed, create some tree aliases
 if command -v tree &>/dev/null; then
