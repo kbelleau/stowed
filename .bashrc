@@ -4,6 +4,9 @@
 # if not running interactively, don't run any configurations
 [[ $- != *i* ]] && return
 
+# ensure session history
+history -a
+
 # don't put duplicate lines in history; ignore leading whitespace
 HISTCONTROL=ignoreboth
 
