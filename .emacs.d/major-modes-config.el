@@ -42,6 +42,7 @@
 
 ;; ruby
 (defun ruby-config ()
+  (chruby-auto)
   (visual-line-mode -1)
   (inf-ruby-minor-mode 1)
   (setq truncate-lines t
@@ -57,6 +58,17 @@
   (highlight-indent-guides-mode 1))
 (add-hook 'ruby-mode-hook #'ruby-config)
 
+;; sed
+(defun sed-config ()
+  (visual-line-mode -1)
+  (setq truncate-lines t
+        show-trailing-whitespace t
+        fill-column 80
+        indent-tabs-mode nil
+        tab-width 2)
+  (display-fill-column-indicator-mode 1)
+  (highlight-indent-guides-mode 1))
+
 ;; yaml
 (defun yaml-config ()
   (visual-line-mode -1)
@@ -66,7 +78,6 @@
         indent-tabs-mode nil
         tab-width 2)
   (display-fill-column-indicator-mode 1)
-  (flymake-mode 1)
   (highlight-indent-guides-mode 1))
 (add-hook 'yaml-mode-hook #'yaml-config)
 

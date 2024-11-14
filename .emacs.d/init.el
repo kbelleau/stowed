@@ -79,8 +79,8 @@
 ;; load notif
 (require 'notif)
 
-;; TO CHANGE: load chruby.el
-(require 'chruby)
+;; load chruby-auto
+(require 'chruby-auto)
 
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
