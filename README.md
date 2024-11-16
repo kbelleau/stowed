@@ -17,7 +17,9 @@ Change into the `stowed/` directory:
 Use GNU stow to create symlinks:  
 `stow .`  
 
-Or, copy the files into your home directory.
+Or, copy the files into your home directory.  
+
+Files prefixed with "served" are intended for use on production Linux servers.
 
 ## Installing GNU stow
 Install GNU `stow` via your system package manager.  
