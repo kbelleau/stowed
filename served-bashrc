@@ -3,6 +3,9 @@
 # if not running interactively, don't run any configurations
 [[ $- != *i* ]] && return
 
+# make sure emacs keybinding mode is used
+set -o emacs
+
 # ensure session history
 history -a
 
