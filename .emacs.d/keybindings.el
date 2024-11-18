@@ -70,11 +70,11 @@
 
   ;; notif functions (prefixed)
   (define-key map (kbd "C-c n") notif-prefix-map)
-  (define-key map (kbd "C-c n n") #'notif-find-note)
+  (define-key map (kbd "C-c n f") #'notif-find-note)
   (define-key map (kbd "C-c n r") #'notif-read-note)
-  (define-key map (kbd "C-c n i") #'notif-find-ticket)
+  (define-key map (kbd "C-c n t") #'notif-find-ticket)
   (define-key map (kbd "C-c n t") #'notif-find-todo)
-  (define-key map (kbd "C-c n p") #'notif-find-notepad)
+  (define-key map (kbd "C-c n n") #'notif-find-notepad)
   ;; (define-key map (kbd "C-c n f") #'notif-search-notes)
 
   ;; substitute functions (prefixed)
@@ -105,7 +105,7 @@
   (define-key map (kbd "C-c t w") #'whitespace-mode)
   (define-key map (kbd "C-c t e") #'display-fill-column-indicator-mode)
   (define-key map (kbd "C-c t l") #'display-line-numbers-mode)
-  (define-key map (kbd "C-c t i") #'highlight-indent-guides-mode)
+  (define-key map (kbd "C-c t i") #'indent-bars-mode)
   (define-key map (kbd "C-c t t") #'modus-themes-toggle)
   (define-key map (kbd "C-c t s") #'speedbar-frame-mode)
 

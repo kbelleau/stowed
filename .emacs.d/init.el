@@ -69,13 +69,6 @@
 (add-to-list 'load-path
              (concat user-emacs-directory "lisp/"))
 
-;; highlight-indent-guides mode
-(require 'highlight-indent-guides)
-(setq highlight-indent-guides-method 'character
-      highlight-indent-guides-auto-enabled nil)
-(set-face-attribute 'highlight-indent-guides-character-face nil
-                    :foreground "gray25")
-
 ;; load notif
 (require 'notif)
 
@@ -106,6 +99,18 @@
 ;; recentf exclusions
 (add-to-list 'recentf-exclude "TODO")
 (add-to-list 'recentf-exclude "Notepad")
+
+;; indent-bars mode customizations
+(setq indent-bars-prefer-character "│"
+      indent-bars-starting-column 0
+      indent-bars-color '(highlight :face-bg nil :blend 0.3)
+      indent-bars-pattern "."
+      indent-bars-width-frac 0.2
+      indent-bars-pad-frac 0.1
+      indent-bars-zigzag nil
+      indent-bars-color-by-depth nil
+      indent-bars-highlight-current-depth nil
+      indent-bars-display-on-blank-lines nil)
 
 ;; electric pair mode
 (electric-pair-mode 1)
@@ -150,9 +155,9 @@
       '(org-mode-hook
         emacs-lisp-mode-hook
         sh-mode-hook
+        sed-mode-hook
         ruby-mode-hook
         yaml-mode-hook
-        json-mode-hook
         markdown-mode-hook
         ediff-hook
         Buffer-menu-mode-hook

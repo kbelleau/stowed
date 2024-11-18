@@ -5,6 +5,7 @@
       '(modus-themes
         org-superstar
         company
+        indent-bars
         vertico
         orderless
         lin
@@ -15,6 +16,5 @@
         undo-fu
         inf-ruby
         yaml-mode
-        json-mode
         sed-mode
         markdown-mode))

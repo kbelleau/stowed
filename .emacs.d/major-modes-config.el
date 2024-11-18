@@ -37,8 +37,19 @@
   (display-fill-column-indicator-mode 1)
   (flymake-mode 1)
   (company-mode 1)
-  (highlight-indent-guides-mode 1))
+  (indent-bars-mode 1))
 (add-hook 'sh-mode-hook #'sh-config)
+
+;; sed
+(defun sed-config ()
+  (visual-line-mode -1)
+  (setq truncate-lines t
+        show-trailing-whitespace t
+        fill-column 80
+        indent-tabs-mode nil
+        tab-width 2)
+  (display-fill-column-indicator-mode 1))
+(add-hook 'sed-mode-hook #'sed-config)
 
 ;; ruby
 (defun ruby-config ()
@@ -55,19 +66,8 @@
   (display-fill-column-indicator-mode 1)
   (flymake-mode 1)
   (company-mode 1)
-  (highlight-indent-guides-mode 1))
+  (indent-bars-mode 1))
 (add-hook 'ruby-mode-hook #'ruby-config)
-
-;; sed
-(defun sed-config ()
-  (visual-line-mode -1)
-  (setq truncate-lines t
-        show-trailing-whitespace t
-        fill-column 80
-        indent-tabs-mode nil
-        tab-width 2)
-  (display-fill-column-indicator-mode 1)
-  (highlight-indent-guides-mode 1))
 
 ;; yaml
 (defun yaml-config ()
@@ -78,18 +78,9 @@
         indent-tabs-mode nil
         tab-width 2)
   (display-fill-column-indicator-mode 1)
-  (highlight-indent-guides-mode 1))
+  (company-mode 1)
+  (indent-bars-mode 1))
 (add-hook 'yaml-mode-hook #'yaml-config)
-
-;; json
-(defun json-config ()
-  (visual-line-mode -1)
-  (setq truncate-lines t
-        show-trailing-whitespace t
-        indent-tabs-mode nil
-        tab-width 4)
-  (highlight-indent-guides-mode 1))
-(add-hook 'json-mode-hook #'json-config)
 
 ;; markdown
 (defun md-config ()
