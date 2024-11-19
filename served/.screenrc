@@ -1,0 +1,16 @@
+# kbelleau - .screenrc - served
+# configured on screen version 4.09.00
+
+# default terminal type
+term xterm-256color
+
+# environment defaults
+env LANG=en_US.UTF-8
+
+# enable non-blocking mode to help when ssh connections are flaky
+defnonblock 5
+
+# default window size
+hardstatus on
+hardstatus alwayslastline
+hardstatus string " %-w%{R}%n %t%{-}%+w%= %{R}%H "

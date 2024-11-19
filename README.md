@@ -1,8 +1,11 @@
-# My Stowed Files
+# Stowed Files
 Contains configuration files for various GNU programs.  
 - Bash  
 - Emacs  
 - Nano  
+- Screen  
+
+Files under the `served` directory are more focused towards production Linux systems, while files under the top directory are developed and used on MacOS using [Homebrew](https://brew.sh/).
 
 ## To Use
 Get to your home directory:  
@@ -14,17 +17,12 @@ Clone this repository:
 Change into the `stowed/` directory:  
 `cd stowed`  
 
-Use GNU stow to create symlinks:  
+[Optional] Use GNU stow to create symlinks:  
 `stow .`  
 
 Or, copy the files into your home directory.  
 
-Files prefixed with "served" are intended for use on production Linux servers.
-
 ## Installing GNU stow
-Install GNU `stow` via your system package manager.  
-
-Homebrew:  
-`brew install stow`  
+You can install GNU `stow` via your system package manager.  
 
 See more information about GNU stow [here](https://www.gnu.org/software/stow/).
