@@ -7,6 +7,9 @@ term xterm-256color
 # environment defaults
 env LANG=en_US.UTF-8
 
+# make scrollback much longer
+defscrollback 10000
+
 # default window size
 hardstatus on
 hardstatus alwayslastline
