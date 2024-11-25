@@ -1,13 +1,16 @@
 # kbelleau - .screenrc - MacOS / homebrew
 # configured on screen version 5.0.0
 
-# default terminal type
-term xterm-256color
-
 # environment defaults
 env LANG=en_US.UTF-8
 
-# make scrollback much longer
+# default terminal type
+term xterm-256color
+
+# have screen inherit terminal emulator's cursor behavior
+termcapinfo xterm* ti@:te@
+
+# as a fallback; set a scrollback size
 defscrollback 10000
 
 # default window size
