@@ -82,6 +82,14 @@
   (indent-bars-mode 1))
 (add-hook 'yaml-mode-hook #'yaml-config)
 
+;; dockerfile
+(defun dockerfile-config ()
+  (visual-line-mode -1)
+  (setq truncate-lines t
+        show-trailing-whitespace t)
+  (company-mode 1))
+(add-hook 'dockerfile-mode-hook #'dockerfile-config)
+
 ;; markdown
 (defun md-config ()
   (visual-line-mode 1)

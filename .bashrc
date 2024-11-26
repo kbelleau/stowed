@@ -21,7 +21,7 @@ HISTFILESIZE=4000
 shopt -s checkwinsize
 
 # fancy PS1
-export PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\] \w/ \n \$ '
+export PS1=$'\[\e[1;37m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\] \w \n \$ '
 
 # enable bash completion via homebrew
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && \

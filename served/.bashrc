@@ -23,12 +23,13 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # fancy PS1
-export PS1=$'\[\e[1;35m\]\u\[\e[0m\]@\[\e[1;31m\]\h\[\e[0m\] \w/ \n \$ '
+export PS1=$'\[\e[1;35m\]\u\[\e[0m\]@\[\e[1;31m\]\h\[\e[0m\] \w \n \$ '
 
 # assign EDITOR
 if command -v nano &>/dev/null; then
   EDITOR=$(type -p nano)
   export EDITOR
+  alias view='nano -v'
 fi
 
 # assign PAGER
@@ -57,7 +58,6 @@ alias lv='ls -lv'
 alias lav='ls -lav'
 alias sudocat='sudo cat'
 alias append='tee -a'
-alias view='nano -v'
 alias tp='type -P'
 
 # if we have tree installed, create some tree aliases

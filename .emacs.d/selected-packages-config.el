@@ -17,4 +17,5 @@
         inf-ruby
         yaml-mode
         sed-mode
+        dockerfile-mode
         markdown-mode))
