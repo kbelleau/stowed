@@ -1,5 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; kbelleau bell-functions.el
+;; beelleau bell-functions.el
 
 ;; kill-word -> bell-delete-word
 (defun bell-delete-word (arg)

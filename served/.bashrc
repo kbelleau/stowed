@@ -1,4 +1,4 @@
-# kbelleau - .bashrc - served
+# beelleau - .bashrc - served
 
 # if not running interactively, don't run any configurations
 [[ $- != *i* ]] && return

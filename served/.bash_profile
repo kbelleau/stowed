@@ -1,4 +1,4 @@
-# kbelleau - .bash_profile - served
+# beelleau - .bash_profile - served
 
 # add home bin to PATH
 [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"

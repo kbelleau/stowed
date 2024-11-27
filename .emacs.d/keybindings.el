@@ -1,5 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; kbelleau keybinds.el
+;; beelleau keybinds.el
 
 ;;; OS SPECIFIC
 ;; mac option as 'meta'

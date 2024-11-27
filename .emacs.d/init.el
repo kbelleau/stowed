@@ -1,5 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; kbelleau init.el
+;; beelleau init.el
 (require 'package)
 
 ;;; THEME

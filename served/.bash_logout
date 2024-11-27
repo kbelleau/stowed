@@ -1,4 +1,4 @@
-# kbelleau - .bash_logout - served
+# beelleau - .bash_logout - served
 
 # This file is sourced when a login shell terminates.
 

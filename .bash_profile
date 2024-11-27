@@ -1,4 +1,4 @@
-# kbelleau - .bash_profile - MacOS w/ homebrew
+# beelleau - .bash_profile - MacOS w/ homebrew
 # configured on MacOS Sequoia
 
 # add homebrew environment

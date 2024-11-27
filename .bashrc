@@ -1,4 +1,4 @@
-# kbelleau - .bashrc - MacOS w/ homebrew
+# beelleau - .bashrc - MacOS w/ homebrew
 # configured on MacOS Sequoia
 
 # if not running interactively, don't run any configurations

@@ -1,5 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; kbelleau major-modes-config.el
+;; beelleau major-modes-config.el
 
 ;; org
 (defun org-config ()

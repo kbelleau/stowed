@@ -12,7 +12,7 @@ Get to your home directory:
 `cd`  
 
 Clone this repository:  
-`git clone https://github.com/kbelleau/stowed.git`  
+`git clone https://github.com/beelleau/stowed.git`  
 
 Change into the `stowed/` directory:  
 `cd stowed`  

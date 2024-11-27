@@ -1,5 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; kbelleau selected-packages-config.el
+;; beelleau selected-packages-config.el
 
 (setq package-selected-packages
       '(modus-themes

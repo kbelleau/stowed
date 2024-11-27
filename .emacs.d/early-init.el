@@ -1,5 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; kbelleau early-init.el
+;; beelleau early-init.el
 
 ;; set garbage collection to 20 MB
 (setq gc-cons-threshold (* 20 1048576))
