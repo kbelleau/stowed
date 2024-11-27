@@ -53,7 +53,7 @@
 
 ;; ruby
 (defun ruby-config ()
-  (chruby-auto)
+  (ruby-auto)
   (visual-line-mode -1)
   (inf-ruby-minor-mode 1)
   (setq truncate-lines t

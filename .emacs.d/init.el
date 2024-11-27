@@ -72,8 +72,8 @@
 ;; load notif
 (require 'notif)
 
-;; load chruby-auto
-(require 'chruby-auto)
+;; load ruby-auto
+(require 'ruby-auto)
 
 ;;; MINOR MODE CONFIGURATIONS - GLOBAL
 ;; vertico
