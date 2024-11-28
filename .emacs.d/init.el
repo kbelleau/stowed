@@ -2,6 +2,11 @@
 ;; beelleau init.el
 (require 'package)
 
+;; FILE ENCODING
+(set-language-environment "utf-8")
+(set-default-coding-systems 'utf-8-unix)
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 ;;; THEME
 (require 'modus-themes)
 (setq modus-themes-org-blocks 'gray-background
