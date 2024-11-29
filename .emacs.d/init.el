@@ -80,7 +80,7 @@
 ;; load ruby-auto
 (require 'ruby-auto)
 
-;;; MINOR MODE CONFIGURATIONS - GLOBAL
+;;; MINOR MODE CONFIGURATIONS
 ;; vertico
 (require 'vertico)
 (vertico-mode t)
@@ -141,29 +141,31 @@
 (require 'flymake)
 (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
 
-;;; MINOR MODE CONFIGURATIONS - MODE SPECIFIC
-;; spellcheck
-(setq-default ispell-program-name "/opt/homebrew/bin/aspell")
-
 ;; eglot
 (require 'eglot)
 (setq eglot-autoshutdown t)
+;; use ruby-lsp instead of solargraph for ruby
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs '((ruby-mode ruby-ts-mode)
+                                        "ruby-lsp")))
 
-;; company-mode
-(require 'company)
-(setq company-minimum-prefix-length 1
-      company-idle-delay
-      (lambda () (if (company-in-string-or-comment) nil 0.4)))
+;; corfu
+(require 'corfu)
+(setq corfu-auto t
+      corfu-quit-no-match 'separator
+      corfu-separator ?_
+      corfu-auto-delay 0.3
+      corfu-auto-prefix 1)
 
 ;; lin
 (setq lin-mode-hooks
-      '(org-mode-hook
-        emacs-lisp-mode-hook
+      '(emacs-lisp-mode-hook
         sh-mode-hook
         sed-mode-hook
         ruby-mode-hook
         yaml-mode-hook
         markdown-mode-hook
+        dockerfile-mode-hook
         ediff-hook
         Buffer-menu-mode-hook
         recentf-dialog-mode-hook))
@@ -175,6 +177,9 @@
  '((emacs-lisp . t)
    (shell . t)
    (ruby . t)))
+
+;; spellcheck
+(setq-default ispell-program-name "/opt/homebrew/bin/aspell")
 
 ;;; MAJOR MODE CONFIGURATIONS
 (load-file (concat user-emacs-directory "major-modes-config.el"))
@@ -192,10 +197,8 @@
 ;;; AFTER INIT
 (add-hook 'after-init-hook
           (lambda ()
-            (progn
-              (kill-buffer "*scratch*")
-              (with-current-buffer "*Messages*"
-                (text-scale-decrease 1)))))
+            (with-current-buffer "*Messages*"
+              (text-scale-decrease 1))))
 
 ;;; SELECTED PACKAGES
 (load-file (concat user-emacs-directory "selected-packages-config.el"))

@@ -21,7 +21,7 @@
         indent-tabs-mode nil
         tab-width 2)
   (display-fill-column-indicator-mode 1)
-  (company-mode 1)
+  (corfu-mode 1)
   (paredit-mode 1))
 (add-hook 'emacs-lisp-mode-hook #'elisp-config)
 
@@ -36,7 +36,7 @@
         sh-basic-offset 2)
   (display-fill-column-indicator-mode 1)
   (flymake-mode 1)
-  (company-mode 1)
+  (corfu-mode 1)
   (indent-bars-mode 1))
 (add-hook 'sh-mode-hook #'sh-config)
 
@@ -64,8 +64,8 @@
         ruby-indent-tabs-mode nil
         ruby-indent-level 2)
   (display-fill-column-indicator-mode 1)
-  (flymake-mode 1)
-  (company-mode 1)
+  (eglot-ensure)
+  (corfu-mode 1)
   (indent-bars-mode 1))
 (add-hook 'ruby-mode-hook #'ruby-config)
 
@@ -78,7 +78,7 @@
         indent-tabs-mode nil
         tab-width 2)
   (display-fill-column-indicator-mode 1)
-  (company-mode 1)
+  (corfu-mode 1)
   (indent-bars-mode 1))
 (add-hook 'yaml-mode-hook #'yaml-config)
 
@@ -87,7 +87,7 @@
   (visual-line-mode -1)
   (setq truncate-lines t
         show-trailing-whitespace t)
-  (company-mode 1))
+  (corfu-mode 1))
 (add-hook 'dockerfile-mode-hook #'dockerfile-config)
 
 ;; markdown

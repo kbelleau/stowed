@@ -4,13 +4,14 @@
 (setq package-selected-packages
       '(modus-themes
         org-superstar
-        company
         indent-bars
+        corfu
         vertico
         orderless
         lin
         substitute
         yasnippet
+        eglot
         tramp
         paredit
         undo-fu
