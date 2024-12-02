@@ -81,6 +81,12 @@
 (require 'ruby-auto)
 
 ;;; MINOR MODE CONFIGURATIONS
+;; tramp
+(require 'tramp)
+;; adding a gem location to tramp's default remote path
+(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+(add-to-list 'tramp-remote-path "/usr/local/bundle/bin")
+
 ;; vertico
 (require 'vertico)
 (vertico-mode t)

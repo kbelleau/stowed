@@ -23,7 +23,10 @@
 ;; ruby map
 (add-hook 'ruby-mode-hook
           (lambda ()
-            (local-set-key (kbd "C-c r") #'inf-ruby-console-auto)))
+            (define-prefix-command 'bell-ruby-map)
+            (local-set-key (kbd "C-c r") bell-ruby-map)
+            (local-set-key (kbd "C-c r c") #'inf-ruby-console-auto)
+            (local-set-key (kbd "C-c r a") #'ruby-auto)))
 
 ;; markdown map
 (add-hook 'markdown-mode-hook
