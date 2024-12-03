@@ -14,6 +14,7 @@
         eglot
         tramp
         paredit
+        literate-scratch
         undo-fu
         inf-ruby
         yaml-mode
