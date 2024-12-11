@@ -36,7 +36,6 @@
 ;;; GLOBAL MAP
 (let ((map global-map))
 
-  ;; macos thing
   (define-key map (kbd "<escape>") 'keyboard-escape-quit)
 
   ;; bell functions
@@ -44,7 +43,6 @@
   (define-key map (kbd "M-d") #'bell-delete-word)
   (define-key map (kbd "C-<backspace>") #'bell-backward-delete-word)
   (define-key map (kbd "C-x o") #'bell-write-file-out)
-  (define-key map (kbd "C-c s") #'bell-create-scratch)
   (define-key map (kbd "C-w") #'bell-show-file-path)
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
   (define-key map (kbd "s-<backspace>") #'bell-backward-delete-line)
@@ -120,6 +118,9 @@
 
   ;; packages
   (define-key map (kbd "C-c p") #'list-packages)
+
+  ;; scratch buffer
+  (define-key map (kbd "C-c s") #'scratch-buffer)
 
   ;; unset overlapping macos keybindings (make these available for use)
   (define-key map (kbd "C-s") nil)      ; emacs isearch-forward

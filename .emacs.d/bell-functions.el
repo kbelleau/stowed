@@ -51,12 +51,6 @@ This commmand does not push erased text to the kill ring."
         (message (format "* %s" file-name))
       (message "* No file open in current buffer"))))
 
-;; re-open a elisp scratch buffer
-(defun bell-create-scratch nil
-  "Create a new scratch buffer."
-  (interactive)
-  (switch-to-buffer "*scratch*"))
-
 ;; markdown newline that adds ending double space
 (defun bell-markdown-newline ()
   "Insert two spaces and a newline."
