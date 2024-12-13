@@ -105,10 +105,11 @@
       '((file (styles basic partial-completion))))
 
 ;; recentf
+(require 'recentf)
 (setq recentf-max-menu-items 10
       recentf-max-saved-items 10
       recentf-max-size 10)
-(recentf-mode 1)
+(add-hook 'after-init-hook #'recentf-mode)
 ;; recentf exclusions
 (add-to-list 'recentf-exclude "TODO")
 (add-to-list 'recentf-exclude "Notepad")
@@ -143,7 +144,10 @@
 ;; yasnippet
 (setq yas-snippet-dirs '("~/snippets"))
 (require 'yasnippet)
-(yas-global-mode 1)
+(add-hook 'after-init-hook #'yas-global-mode)
+
+;; paredit
+(require 'paredit)
 
 ;; flymake mode
 (require 'flymake)

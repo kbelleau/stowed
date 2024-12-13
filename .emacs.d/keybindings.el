@@ -19,8 +19,8 @@
 ;; mode toggles
 (define-prefix-command 'toggle-prefix-map)
 
-;;; MAJOR MODE MAPS
-;; ruby map
+;;; MAJOR MODE KEY HOOKS
+;; ruby hook
 (add-hook 'ruby-mode-hook
           (lambda ()
             (define-prefix-command 'bell-ruby-map)
@@ -28,10 +28,15 @@
             (local-set-key (kbd "C-c r c") #'inf-ruby-console-auto)
             (local-set-key (kbd "C-c r a") #'ruby-auto)))
 
-;; markdown map
+;; markdown hook
 (add-hook 'markdown-mode-hook
           (lambda ()
             (local-set-key (kbd "C-<return>") #'bell-markdown-newline)))
+
+;;; MINOR MODE MAPS
+(let ((map paredit-mode-map))
+  (define-key paredit-mode-map (kbd "M-D") #'paredit-forward-kill-word)
+  (define-key paredit-mode-map (kbd "M-d") nil))
 
 ;;; GLOBAL MAP
 (let ((map global-map))
@@ -39,9 +44,8 @@
   (define-key map (kbd "<escape>") 'keyboard-escape-quit)
 
   ;; bell functions
-  (define-key map (kbd "C-<delete>") #'bell-delete-word)
   (define-key map (kbd "M-d") #'bell-delete-word)
-  (define-key map (kbd "C-<backspace>") #'bell-backward-delete-word)
+  (define-key map (kbd "M-<backspace>") #'bell-backward-delete-word)
   (define-key map (kbd "C-x o") #'bell-write-file-out)
   (define-key map (kbd "C-w") #'bell-show-file-path)
   (define-key map (kbd "C-x C-s") #'bell-find-file-ssh)
