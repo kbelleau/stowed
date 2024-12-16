@@ -10,6 +10,9 @@ term xterm-256color
 # have screen inherit terminal emulator's cursor behavior
 termcapinfo xterm* ti@:te@
 
+# use visual bell by default
+vbell on
+
 # enable non-blocking mode to help when ssh connections are flaky
 defnonblock 5
 
