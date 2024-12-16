@@ -10,6 +10,9 @@ term xterm-256color
 # have screen inherit terminal emulator's cursor behavior
 termcapinfo xterm* ti@:te@
 
+# use visual bell by default
+vbell on
+
 # as a fallback; set a scrollback size
 defscrollback 10000
 

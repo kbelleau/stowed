@@ -170,6 +170,7 @@
       corfu-auto-prefix 1)
 
 ;; lin
+(lin-global-mode 1)
 (setq lin-mode-hooks
       '(emacs-lisp-mode-hook
         sh-mode-hook
@@ -181,7 +182,6 @@
         ediff-hook
         Buffer-menu-mode-hook
         recentf-dialog-mode-hook))
-(lin-global-mode 1)
 
 ;; org babel
 (org-babel-do-load-languages
