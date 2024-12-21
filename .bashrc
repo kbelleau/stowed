@@ -62,9 +62,8 @@ alias tp='type -P'
 
 # if we have tree installed, create some tree aliases
 if command -v tree &>/dev/null; then
-  alias tree='tree -Ca'
-  alias cedar='echo; tree -I .git $(pwd)'
-  alias sap='echo; tree -p'
+  alias tree='tree -Ca -I .git --gitignore'
+  alias sap='tree -Cap -I .git --gitignore'
 fi
 
 # functions

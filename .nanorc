@@ -1,8 +1,8 @@
 # beelleau - .nanorc - MacOS / homebrew
-# configured on nano version 8.2
+# configured on nano version 8.0
 
 # syntax highlighting
-include "/opt/homebrew/Cellar/nano/8.2/share/nano/*.nanorc"
+include "/opt/homebrew/Cellar/nano/*/share/nano/*.nanorc"
 
 set tabstospaces
 set tabsize 2
